@@ -2,6 +2,9 @@
 
 ## Overview
 
+Forked from cyph/cordova-plugin-chooser.
+Some problems with MIME type filter and Google Drive, so this plugin does not offer the possibility to filter by MIME type …
+
 File chooser plugin for Cordova.
 
 Install with Cordova CLI:
@@ -19,15 +22,13 @@ Supported Platforms:
 	/**
 	 * Displays native prompt for user to select a file.
 	 *
-	 * @param accept Optional MIME type filter (e.g. 'image/gif,video/*').
-	 *
 	 * @returns Promise containing selected file's raw binary data,
 	 * base64-encoded data: URI, MIME type, display name, and original URI.
 	 *
 	 * If user cancels, promise will be resolved as undefined.
 	 * If error occurs, promise will be rejected.
 	 */
-	chooser.getFile(accept?: string) : Promise<undefined|{
+	chooser.getFile() : Promise<undefined|{
 		data: Uint8Array;
 		dataURI: string;
 		mediaType: string;
